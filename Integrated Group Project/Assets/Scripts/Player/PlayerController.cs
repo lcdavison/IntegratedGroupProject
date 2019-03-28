@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log ( "Movement Speed : " + movement_speed );
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 

@@ -6,7 +6,7 @@ using UnityEngine.U2D;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    enum State 
+    public enum AnimationState 
     {
         FORWARD = 0x0,
         BACKWARD = 0x4,
@@ -23,8 +23,9 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField]
     private Sprite [ ] sprites;
 
-    private State animation_state = State.FORWARD;
+    private AnimationState animation_state  = AnimationState.FORWARD;
     private byte animation_frame = 0;
+    private byte anim_state_start = 0;
     private float last_time;
 
     // Start is called before the first frame update
@@ -69,9 +70,17 @@ public class PlayerAnimator : MonoBehaviour
 
         if ( current_time - last_time >= ( 1.0f / 4.0f ) )
         {
-            animation_frame = ( byte ) ( ++animation_frame & 15 );
+            int anim_start = (int) animation_state;
+            Debug.Log ( "Animation Start Frame : " + anim_start + " STATE : " + animation_state );
+
+            animation_frame = ( byte ) ( ( ++animation_frame & 3 ) + Convert.ToByte ( anim_start ) );
             sprite_r.sprite = sprites [ animation_frame ];
             last_time = current_time;
         }
+    }
+
+    public void SetAnimationState ( AnimationState new_state )
+    {
+        animation_state = new_state;
     }
 }

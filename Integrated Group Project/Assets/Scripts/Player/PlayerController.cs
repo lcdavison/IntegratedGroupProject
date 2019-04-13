@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     private byte button_mask;
 
+    public bool movement_enabled = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,25 +30,28 @@ public class PlayerController : MonoBehaviour
 
     void Update ( )
     {
-        if ( ( button_mask & (byte) ButtonState.LEFT ) > 0 )
+        if ( movement_enabled )
         {
-            animator.SetAnimationState ( PlayerAnimator.AnimationState.LEFT );
-            rigidbody.MovePosition ( transform.position + ( new Vector3 ( -1.0f, 0.0f  ) * movement_speed * Time.deltaTime ) );
-        }
-        else if ( ( button_mask & (byte) ButtonState.RIGHT ) > 0 )
-        {
-            animator.SetAnimationState ( PlayerAnimator.AnimationState.RIGHT );
-            rigidbody.MovePosition ( transform.position + ( new Vector3 ( 1.0f, 0.0f  ) * movement_speed * Time.deltaTime ) );
-        }
-        else if ( ( button_mask & (byte) ButtonState.UP ) > 0 )
-        {
-            animator.SetAnimationState ( PlayerAnimator.AnimationState.FORWARD );
-            rigidbody.MovePosition ( transform.position + ( new Vector3 ( 0.0f, 1.0f  ) * movement_speed * Time.deltaTime ) );
-        }
-        else if ( ( button_mask & (byte) ButtonState.DOWN ) > 0 )
-        {
-            animator.SetAnimationState ( PlayerAnimator.AnimationState.BACKWARD );
-            rigidbody.MovePosition ( transform.position + ( new Vector3 ( 0.0f, -1.0f  ) * movement_speed * Time.deltaTime ) );
+            if ( ( button_mask & (byte) ButtonState.LEFT ) == 1 )
+            {
+                animator.SetAnimationState ( PlayerAnimator.AnimationState.LEFT );
+                rigidbody.MovePosition ( transform.position + ( new Vector3 ( -1.0f, 0.0f  ) * movement_speed * Time.deltaTime ) );
+            }
+            else if ( ( button_mask & (byte) ButtonState.RIGHT ) == 1 )
+            {
+                animator.SetAnimationState ( PlayerAnimator.AnimationState.RIGHT );
+                rigidbody.MovePosition ( transform.position + ( new Vector3 ( 1.0f, 0.0f  ) * movement_speed * Time.deltaTime ) );
+            }
+            else if ( ( button_mask & (byte) ButtonState.UP ) == 1 )
+            {
+                animator.SetAnimationState ( PlayerAnimator.AnimationState.FORWARD );
+                rigidbody.MovePosition ( transform.position + ( new Vector3 ( 0.0f, 1.0f  ) * movement_speed * Time.deltaTime ) );
+            }
+            else if ( ( button_mask & (byte) ButtonState.DOWN ) == 1 )
+            {
+                animator.SetAnimationState ( PlayerAnimator.AnimationState.BACKWARD );
+                rigidbody.MovePosition ( transform.position + ( new Vector3 ( 0.0f, -1.0f  ) * movement_speed * Time.deltaTime ) );
+            }
         }
     }
 

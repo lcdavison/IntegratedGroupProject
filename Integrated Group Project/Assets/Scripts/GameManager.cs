@@ -13,6 +13,17 @@ public static class GameManager
           Score
           etc.
     */
+    private static int coins = 0;
+
+    public static void AddCoins ( int amount )
+    {
+        coins += amount;
+    }
+
+    public static int GetCoins ( )
+    {
+        return coins;
+    }
 
     public static void LoadBuilding ( string level_string )
     {

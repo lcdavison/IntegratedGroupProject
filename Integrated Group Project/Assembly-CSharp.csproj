@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Buildings\BuildingHandler.cs" />
      <Compile Include="Assets\Scripts\Buildings\ClockTower\Clock.cs" />
      <Compile Include="Assets\Scripts\Buildings\ClockTower\ClockTowerQuestion.cs" />
+     <Compile Include="Assets\Scripts\Buildings\Park\Park.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerAnimator.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerBuildingEnter.cs" />
@@ -64,19 +65,19 @@
      <Compile Include="Assets\Scripts\Questions\QuestionGenerator.cs" />
      <Compile Include="Assets\Scripts\User Interface\MainMenu.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>E:/University/Year 2/Integrated Group Project/Integrated Group Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>E:/University/Year 2/IntegratedGroupProject/Integrated Group Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>E:/University/Year 2/Integrated Group Project/Integrated Group Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>E:/University/Year 2/IntegratedGroupProject/Integrated Group Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>E:/University/Year 2/Integrated Group Project/Integrated Group Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>E:/University/Year 2/IntegratedGroupProject/Integrated Group Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>E:/University/Year 2/Integrated Group Project/Integrated Group Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>E:/University/Year 2/IntegratedGroupProject/Integrated Group Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>E:/University/Year 2/Integrated Group Project/Integrated Group Project/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>E:/University/Year 2/IntegratedGroupProject/Integrated Group Project/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -280,13 +281,13 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>E:/University/Year 2/Integrated Group Project/Integrated Group Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>E:/University/Year 2/IntegratedGroupProject/Integrated Group Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>E:/University/Year 2/Integrated Group Project/Integrated Group Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>E:/University/Year 2/IntegratedGroupProject/Integrated Group Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>E:/University/Year 2/Integrated Group Project/Integrated Group Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>E:/University/Year 2/IntegratedGroupProject/Integrated Group Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

@@ -32,22 +32,22 @@ public class PlayerController : MonoBehaviour
     {
         if ( movement_enabled )
         {
-            if ( ( button_mask & (byte) ButtonState.LEFT ) == 1 )
+            if ( ( button_mask & (byte) ButtonState.LEFT ) > 0 )
             {
                 animator.SetAnimationState ( PlayerAnimator.AnimationState.LEFT );
                 rigidbody.MovePosition ( transform.position + ( new Vector3 ( -1.0f, 0.0f  ) * movement_speed * Time.deltaTime ) );
             }
-            else if ( ( button_mask & (byte) ButtonState.RIGHT ) == 1 )
+            else if ( ( button_mask & (byte) ButtonState.RIGHT ) > 0 )
             {
                 animator.SetAnimationState ( PlayerAnimator.AnimationState.RIGHT );
                 rigidbody.MovePosition ( transform.position + ( new Vector3 ( 1.0f, 0.0f  ) * movement_speed * Time.deltaTime ) );
             }
-            else if ( ( button_mask & (byte) ButtonState.UP ) == 1 )
+            else if ( ( button_mask & (byte) ButtonState.UP ) > 0 )
             {
                 animator.SetAnimationState ( PlayerAnimator.AnimationState.FORWARD );
                 rigidbody.MovePosition ( transform.position + ( new Vector3 ( 0.0f, 1.0f  ) * movement_speed * Time.deltaTime ) );
             }
-            else if ( ( button_mask & (byte) ButtonState.DOWN ) == 1 )
+            else if ( ( button_mask & (byte) ButtonState.DOWN ) > 0 )
             {
                 animator.SetAnimationState ( PlayerAnimator.AnimationState.BACKWARD );
                 rigidbody.MovePosition ( transform.position + ( new Vector3 ( 0.0f, -1.0f  ) * movement_speed * Time.deltaTime ) );

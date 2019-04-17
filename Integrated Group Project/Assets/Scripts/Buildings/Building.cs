@@ -8,5 +8,4 @@ public class Building : ScriptableObject
     public int id = 0;
     public string name = "";
     public string scene = "";
-    public Sprite sprite = null;
 }

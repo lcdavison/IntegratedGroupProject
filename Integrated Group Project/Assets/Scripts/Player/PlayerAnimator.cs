@@ -53,6 +53,7 @@ public class PlayerAnimator : MonoBehaviour
                 break;
             }
 
+            //  ASCII Value - 48 = Numerical Value : Subtract 49 to prevent skipping indices
             int index = start_index + ( Convert.ToInt16 ( sprite.name [ 1 ] ) - 49 );
 
             sprites [ index ] = sprite;

@@ -13,7 +13,9 @@ public static class GameManager
           Score
           etc.
     */
-    private static int coins = 0;
+    private static int coins = 0;               //  Current number of coins held by the player
+    public static int current_building = 0;     //  Current Building ID, used for question generation
+    public static bool in_conversation = false; //  Determine if player is in conversation
 
     public static void AddCoins ( int amount )
     {

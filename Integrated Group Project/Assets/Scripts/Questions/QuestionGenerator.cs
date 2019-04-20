@@ -7,14 +7,6 @@ using UnityEngine.UI;
 
 public class QuestionGenerator : MonoBehaviour
 {
-    enum QuestionType 
-    {
-        SUM,
-        DIFF,
-        PROD,
-        QUOT
-    }
-
     private bool answered = true;
 
     [SerializeField]
@@ -23,7 +15,6 @@ public class QuestionGenerator : MonoBehaviour
     [SerializeField]
     private Text question_output;
 
-    private QuestionType question;
     private int correct_answer;
 
     // Use this for initialization
@@ -45,6 +36,21 @@ public class QuestionGenerator : MonoBehaviour
     {
         Debug.Log( "Generate Question" );
 
+        switch ( GameManager.current_building )
+        {
+            case 1:
+                ChurchQuestion ( );
+                break;
+            case 2:
+                ParkQuestion ( );
+                break;
+        }
+        
+        Debug.Log ( correct_answer );
+    }
+
+    void ChurchQuestion ( )
+    {
         float rand = Random.Range ( 0.0f, 4.0f );
         Debug.Log ( "Random Value : " + rand );
 
@@ -86,8 +92,30 @@ public class QuestionGenerator : MonoBehaviour
         }
 
         question_output.text = "Question : " + op_a + " " + symbol + " " + op_b;
+    }
 
-        Debug.Log ( correct_answer );
+    void ParkQuestion ( )
+    {
+        float value = Mathf.Floor ( Random.Range ( 11.0f, 99.0f ) );
+
+        correct_answer = RoundTo10 ( value );
+
+        Debug.Log ( "Value : " + value + " Rounded : " + correct_answer );
+        question_output.text = "Round " + value + " to the nearest 10";
+    }
+
+    private int RoundTo10 ( float value )
+    {
+            float tens = value / 10.0f;
+
+            //  Round Down
+            int rounded = ( ( int ) tens ) * 10;
+
+            //  Round Up
+            if ( ( tens - ( int ) tens ) >= 0.5f )
+                rounded = ( ( int ) tens + 1 ) * 10;
+
+            return rounded;
     }
 
     public void OnClickSubmit()

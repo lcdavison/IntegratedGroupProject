@@ -79,20 +79,20 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ecb1c0df65ea97746a83d07b02ea96dc, type: 3}
   m_PackedSpriteNamesToIndex:
   - F4
-  - R1
   - R2
-  - L1
-  - R4
-  - F3
+  - R1
+  - L2
   - R3
+  - F3
+  - R4
   - B1
   - F2
-  - L2
+  - L1
   - B3
   - F1
-  - L3
+  - L4
   - B4
   - B2
-  - L4
+  - L3
   m_Tag: Boy
   m_IsVariant: 0

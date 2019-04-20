@@ -95,4 +95,9 @@ public class PlayerController : MonoBehaviour
     {
         button_mask ^= (byte) ButtonState.DOWN;
     }
+
+    public void Reset ( )
+    {
+        button_mask = 0;
+    }
 }

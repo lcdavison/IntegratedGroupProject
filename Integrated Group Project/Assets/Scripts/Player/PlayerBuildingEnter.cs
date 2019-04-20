@@ -8,8 +8,12 @@ public class PlayerBuildingEnter : MonoBehaviour
         if (collision.gameObject.tag == "Building")
         {
             BuildingHandler building = collision.gameObject.GetComponent < BuildingHandler > (  );
-            Debug.Log("Entered The Building : " + building.GetData ().name);
-            GameManager.LoadBuilding ( building.GetData ( ).scene );
+        
+            Building data = building.GetData ( );
+            Debug.Log ( "Entered The Building : " + data.name );
+
+            GameManager.LoadBuilding ( data.scene );
+            GameManager.current_building = data.id;
         }
     }
 }

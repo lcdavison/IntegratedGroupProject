@@ -15,12 +15,6 @@ public class Park : MonoBehaviour
     [SerializeField]
     private GameObject park_canvas;
 
-    [SerializeField]
-    private Text question_text;
-
-    [SerializeField]
-    private InputField answer_input;
-
     private bool answered = true;
     private int answer = 0;
 
@@ -39,18 +33,6 @@ public class Park : MonoBehaviour
     void Update()
     {
         ZoomCamera ( );
-
-        // Generate Questions
-        if ( answered )
-        {
-            float value = Mathf.Floor ( Random.Range ( 11.0f, 99.0f ) );
-
-            answer = RoundTo10 ( value );
-
-            Debug.Log ( "Value : " + value + " Rounded : " + answer );
-            question_text.text = "Round " + value + " to the nearest 10";
-            answered = false;
-        }
     }
 
     void OnTriggerEnter2D ( Collider2D collider )
@@ -63,22 +45,22 @@ public class Park : MonoBehaviour
             hud_canvas.SetActive ( false );
             park_canvas.SetActive ( true );
 
-            // player_controller.movement_enabled = false;
+            GameManager.current_building = 2;
+
+            player_controller.movement_enabled = false;
+            player_controller.Reset ( );
         }
     }
 
-    void OnTriggerExit2D ( Collider2D collider )
+    public void OnExitClicked ( )
     {
-        if ( collider.gameObject.tag == "Player" )
-        {
-            zoom = true;
-            zoom_to = zoom_min;
+        zoom = true;
+        zoom_to = zoom_max;
 
-            hud_canvas.SetActive ( true );
-            park_canvas.SetActive ( false );
+        hud_canvas.SetActive ( true );
+        park_canvas.SetActive ( false );
 
-            player_controller.movement_enabled = true;
-        }
+        player_controller.movement_enabled = true;
     }
 
     private void ZoomCamera ( )
@@ -88,28 +70,5 @@ public class Park : MonoBehaviour
 
         if ( camera.orthographicSize == zoom_to )
             zoom = false;
-    }
-
-    private int RoundTo10 ( float value )
-    {
-            float tens = value / 10.0f;
-
-            //  Round Down
-            int rounded = ( ( int ) tens ) * 10;
-
-            //  Round Up
-            if ( ( tens - ( int ) tens ) >= 0.5f )
-                rounded = ( ( int ) tens + 1 ) * 10;
-
-            return rounded;
-    }
-
-    public void OnSubmitClick ( )
-    {
-        int input = System.Convert.ToInt16 ( answer_input.text );
-        if ( input == answer )
-            Debug.Log ( "Correct" );
-
-        answered = true;
     }
 }

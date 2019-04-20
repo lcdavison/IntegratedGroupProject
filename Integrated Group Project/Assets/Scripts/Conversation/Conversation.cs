@@ -16,9 +16,9 @@ public class Conversation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( next_segment )
+        if ( Input.GetMouseButtonDown ( 0 ) )
         {
-            segment_display.text = segments [ current_segment++ ];
+            segment_display.text = segments [ current_segment++ % segments.Length ];
         }
     }
 }

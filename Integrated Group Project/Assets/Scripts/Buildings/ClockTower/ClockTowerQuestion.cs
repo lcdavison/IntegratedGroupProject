@@ -45,8 +45,7 @@ public class ClockTowerQuestion : MonoBehaviour
             // TODO: Display message to tell player to select a clock
             return;
         }
-            
-        //  TODO:  Move to the next scene if all correct clocks have been selected
+        
         Vector2 answer = new Vector2 ( 4, 0 );
 
         byte total = 0;
@@ -55,6 +54,8 @@ public class ClockTowerQuestion : MonoBehaviour
         {
             total += Convert.ToByte ( entry.Value.time == answer );
         }
+
+        GameManager.LoadBuilding ( "lvlTutorial" );
 
         Debug.Log ( "Correct : " + total );
     }

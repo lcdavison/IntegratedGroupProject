@@ -11,7 +11,8 @@ public class PlayerAnimator : MonoBehaviour
         FORWARD = 0x0,
         BACKWARD = 0x4,
         LEFT = 0x8,
-        RIGHT = 0xC
+        RIGHT = 0xC,
+        IDLE = 0x10
     };
 
     [SerializeField]
@@ -23,7 +24,8 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField]
     private Sprite [ ] sprites;
 
-    private AnimationState animation_state  = AnimationState.FORWARD;
+    private AnimationState current_state  = AnimationState.FORWARD;
+    private AnimationState previous_state;
     private byte animation_frame = 0;
     private byte anim_state_start = 0;
     private float last_time;
@@ -69,19 +71,34 @@ public class PlayerAnimator : MonoBehaviour
     {
         float current_time = Time.time;
 
-        if ( current_time - last_time >= ( 1.0f / 4.0f ) )
+        if ( current_state == AnimationState.IDLE )
         {
-            int anim_start = (int) animation_state;
-            Debug.Log ( "Animation Start Frame : " + anim_start + " STATE : " + animation_state );
+            int frame = (byte) ( previous_state );
+            Debug.Log ( "Frame : " + frame );
+            sprite_r.sprite = sprites [ frame ];
+        }
+        else 
+        {
+            Debug.Log ( "Animate" );
 
-            animation_frame = ( byte ) ( ( ++animation_frame & 3 ) + Convert.ToByte ( anim_start ) );
-            sprite_r.sprite = sprites [ animation_frame ];
-            last_time = current_time;
+            if ( current_time - last_time >= ( 1.0f / 4.0f ) )
+            {
+                int anim_start = (int) current_state;   //  Animation starting frame
+                Debug.Log ( "Animation Start Frame : " + anim_start + " STATE : " + current_state );
+
+                int frame = ( byte ) ( ( ++animation_frame & 3 ) + Convert.ToByte ( anim_start ) );
+                sprite_r.sprite = sprites [ frame ];
+                last_time = current_time;
+            }
         }
     }
 
     public void SetAnimationState ( AnimationState new_state )
     {
-        animation_state = new_state;
+        if ( new_state != current_state )
+        {
+            previous_state = current_state;
+            current_state = new_state;
+        }
     }
 }

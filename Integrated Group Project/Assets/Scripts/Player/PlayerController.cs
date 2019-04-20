@@ -52,6 +52,10 @@ public class PlayerController : MonoBehaviour
                 animator.SetAnimationState ( PlayerAnimator.AnimationState.BACKWARD );
                 rigidbody.MovePosition ( transform.position + ( new Vector3 ( 0.0f, -1.0f  ) * movement_speed * Time.deltaTime ) );
             }
+            else
+            {
+                animator.SetAnimationState ( PlayerAnimator.AnimationState.IDLE );
+            }
         }
     }
 

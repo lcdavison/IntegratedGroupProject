@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//  TODO: Cleanup
-
 public class QuestionGenerator : MonoBehaviour
 {
     private bool answered = true;
@@ -17,10 +15,8 @@ public class QuestionGenerator : MonoBehaviour
 
     private int correct_answer;
 
-    // Use this for initialization
-    void Start()
-    {
-    }
+    [SerializeField]
+    private string exit_level;  //  Level to exit to
 
     // Update is called once per frame
     void Update()
@@ -131,5 +127,10 @@ public class QuestionGenerator : MonoBehaviour
             Debug.Log ( "Incorrect" );
 
         answered = true;
+    }
+
+    public void OnClickExit ( )
+    {
+        GameManager.LoadBuilding ( exit_level );
     }
 }

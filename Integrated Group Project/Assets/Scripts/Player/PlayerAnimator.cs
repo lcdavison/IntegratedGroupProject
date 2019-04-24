@@ -70,27 +70,22 @@ public class PlayerAnimator : MonoBehaviour
     void Update ( )
     {
         float current_time = Time.time;
-
-        if ( current_state == AnimationState.IDLE )
+        int frame = (byte) (previous_state);
+        
+        if ( current_state != AnimationState.IDLE ) 
         {
-            int frame = (byte) ( previous_state );
-            Debug.Log ( "Frame : " + frame );
-            sprite_r.sprite = sprites [ frame ];
-        }
-        else 
-        {
-            Debug.Log ( "Animate" );
-
             if ( current_time - last_time >= ( 1.0f / 4.0f ) )
             {
                 int anim_start = (int) current_state;   //  Animation starting frame
                 Debug.Log ( "Animation Start Frame : " + anim_start + " STATE : " + current_state );
 
-                int frame = ( byte ) ( ( ++animation_frame & 3 ) + Convert.ToByte ( anim_start ) );
-                sprite_r.sprite = sprites [ frame ];
+                frame = ( byte ) ( ( ++animation_frame & 3 ) + Convert.ToByte ( anim_start ) );
+                
                 last_time = current_time;
             }
         }
+
+        sprite_r.sprite = sprites [ frame ];
     }
 
     public void SetAnimationState ( AnimationState new_state )

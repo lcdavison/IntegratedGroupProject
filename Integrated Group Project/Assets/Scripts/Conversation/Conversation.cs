@@ -8,17 +8,35 @@ public class Conversation : MonoBehaviour
     [SerializeField]
     private Text segment_display;
 
-    private int current_segment = 0;
+    [SerializeField]
+    private GameObject to_activate;
+
+    private int current_segment;
     private bool next_segment = true;
 
-    public string [ ] segments = new string [ 5 ];
+    [SerializeField]
+    private ConversationScript script;
+
+    void Start ( )
+    {
+        current_segment = 0;
+        segment_display.text = script.segments [ current_segment ];
+    }
 
     // Update is called once per frame
-    void Update()
+    void Update ( )
     {
         if ( Input.GetMouseButtonDown ( 0 ) )
         {
-            segment_display.text = segments [ current_segment++ % segments.Length ];
+            ++current_segment;
+
+            if ( current_segment >= script.segments.Length )
+            {
+                to_activate.SetActive ( true );
+                gameObject.SetActive ( false );
+            }
+
+            segment_display.text = script.segments [ current_segment ];
         }
     }
 }

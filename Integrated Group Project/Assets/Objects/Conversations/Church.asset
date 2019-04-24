@@ -9,10 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d593fbf17f5ebd4293d5e2bd3bac8af, type: 3}
+  m_Script: {fileID: 11500000, guid: e30abcc1264ab5041b9a32c784f11640, type: 3}
   m_Name: Church
   m_EditorClassIdentifier: 
-  id: 1
-  name: Church
-  scene: intChurch
-  sprite: {fileID: 0}
+  segments:
+  - Welcome to the church of bidmas
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 

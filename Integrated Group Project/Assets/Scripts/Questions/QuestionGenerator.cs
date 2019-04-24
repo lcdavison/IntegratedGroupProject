@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//  TODO: Perhaps use some buttons for selecting answers
+//  TODO: Include some more drag and drop interactivity
+
 public class QuestionGenerator : MonoBehaviour
 {
     private bool answered = true;
@@ -34,14 +37,20 @@ public class QuestionGenerator : MonoBehaviour
 
         switch ( GameManager.current_building )
         {
+            case 0:
+                ParkQuestion ( );
+                break;
             case 1:
                 ChurchQuestion ( );
                 break;
             case 2:
-                ParkQuestion ( );
+                MusicShopQuestion ( );
+                break;
+            case 3:
+
                 break;
         }
-        
+
         Debug.Log ( correct_answer );
     }
 
@@ -98,6 +107,16 @@ public class QuestionGenerator : MonoBehaviour
 
         Debug.Log ( "Value : " + value + " Rounded : " + correct_answer );
         question_output.text = "Round " + value + " to the nearest 10";
+    }
+
+    void MusicShopQuestion ( )
+    {
+        //  TODO: Volume Of Cube and Area Of Rectangle
+    }
+
+    void BarQuestion ( )
+    {
+        //  TODO: Question On Averages
     }
 
     private int RoundTo10 ( float value )

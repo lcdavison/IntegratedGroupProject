@@ -15,4 +15,3 @@ MonoBehaviour:
   id: 0
   name: Clocktower
   scene: intClocktower
-  sprite: {fileID: 0}

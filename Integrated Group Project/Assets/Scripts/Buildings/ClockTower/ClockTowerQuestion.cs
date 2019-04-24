@@ -10,32 +10,20 @@ public class ClockTowerQuestion : MonoBehaviour
     [SerializeField]
     private Dictionary <string, Clock> clocks = new Dictionary <string, Clock> ( );
 
-    public void OnClickClock ( )
+    void OnTriggerEnter2D ( Collider2D collider )
     {
-        GameObject selected = EventSystem.current.currentSelectedGameObject;
-        Button selected_button = selected.GetComponent < Button > ( );
-        ColorBlock button_colors = selected_button.colors;
-
-        Clock t_clock = selected.GetComponent <Clock> ( );
-
-        Debug.Log ( "Clock Time : " + t_clock.time.ToString ( ) );
-
-        if ( !clocks.ContainsKey ( selected.name ) )
+        if ( collider.gameObject.tag == "Clock" )
         {
-            clocks.Add ( selected.name, t_clock );
-            button_colors.normalColor = Color.green;
-            button_colors.highlightedColor = Color.green;
+            clocks.Add ( collider.gameObject.name, collider.gameObject.GetComponent <Clock> () );
         }
-        else
+    }
+
+    void OnTriggerExit2D ( Collider2D collider )
+    {
+        if ( collider.gameObject.tag == "Clock" )
         {
-            clocks.Remove ( selected.name );
-            button_colors.normalColor = Color.white;
-            button_colors.highlightedColor = Color.white;
+            clocks.Remove ( collider.gameObject.name );
         }
-
-        Debug.Log ( "Clocks Size : " + clocks.Count );
-
-        selected_button.colors = button_colors;
     }
 
     public void OnClickSubmit ( )
@@ -45,7 +33,7 @@ public class ClockTowerQuestion : MonoBehaviour
             // TODO: Display message to tell player to select a clock
             return;
         }
-        
+
         Vector2 answer = new Vector2 ( 4, 0 );
 
         byte total = 0;

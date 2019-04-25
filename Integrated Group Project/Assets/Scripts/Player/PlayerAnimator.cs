@@ -6,7 +6,7 @@ using UnityEngine.U2D;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    public enum AnimationState 
+    public enum AnimationState
     {
         FORWARD = 0x0,
         BACKWARD = 0x4,
@@ -25,10 +25,11 @@ public class PlayerAnimator : MonoBehaviour
     private Sprite [ ] sprites;
 
     private AnimationState current_state  = AnimationState.FORWARD;
-    private AnimationState previous_state;
+    private AnimationState previous_state = AnimationState.FORWARD;
     private byte animation_frame = 0;
     private byte anim_state_start = 0;
     private float last_time;
+    private bool sprite_update = false;
 
     // Start is called before the first frame update
     void Awake ( )
@@ -69,23 +70,31 @@ public class PlayerAnimator : MonoBehaviour
     // Update is called once per frame
     void Update ( )
     {
+        sprite_update = false;
         float current_time = Time.time;
-        int frame = (byte) (previous_state);
-        
-        if ( current_state != AnimationState.IDLE ) 
+        byte frame = (byte)(previous_state);
+
+        if ( current_state != AnimationState.IDLE )
         {
             if ( current_time - last_time >= ( 1.0f / 4.0f ) )
             {
                 int anim_start = (int) current_state;   //  Animation starting frame
                 Debug.Log ( "Animation Start Frame : " + anim_start + " STATE : " + current_state );
 
-                frame = ( byte ) ( ( ++animation_frame & 3 ) + Convert.ToByte ( anim_start ) );
-                
+                frame = ( byte ) ( Convert.ToByte ( anim_start ) + ( animation_frame++ & 3 ) );
+
                 last_time = current_time;
+                sprite_update = true;
             }
         }
+        else
+        {
+            if ( previous_state != current_state )
+                sprite_update = true;
+        }
 
-        sprite_r.sprite = sprites [ frame ];
+        if ( sprite_update )
+            sprite_r.sprite = sprites [ frame ];
     }
 
     public void SetAnimationState ( AnimationState new_state )

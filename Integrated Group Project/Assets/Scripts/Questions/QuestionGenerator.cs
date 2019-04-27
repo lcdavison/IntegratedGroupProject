@@ -47,14 +47,17 @@ public class QuestionGenerator : MonoBehaviour
                 MusicShopQuestion ( );
                 break;
             case 3:
-
+                BarQuestion ( );
+                break;
+            case 4:
+                BankQuestion ( );
                 break;
         }
 
         Debug.Log ( correct_answer );
     }
 
-    void ChurchQuestion ( )
+    private void ChurchQuestion ( )
     {
         float rand = Random.Range ( 0.0f, 4.0f );
         Debug.Log ( "Random Value : " + rand );
@@ -99,7 +102,7 @@ public class QuestionGenerator : MonoBehaviour
         question_output.text = "Question : " + op_a + " " + symbol + " " + op_b;
     }
 
-    void ParkQuestion ( )
+    private void ParkQuestion ( )
     {
         float value = Mathf.Floor ( Random.Range ( 11.0f, 99.0f ) );
 
@@ -109,7 +112,7 @@ public class QuestionGenerator : MonoBehaviour
         question_output.text = "Round " + value + " to the nearest 10";
     }
 
-    void MusicShopQuestion ( )
+    private void MusicShopQuestion ( )
     {
         float rand = Random.Range ( 0.0f, 1.0f );
 
@@ -141,9 +144,33 @@ public class QuestionGenerator : MonoBehaviour
         correct_answer = width * height * length;
     }
 
-    void BarQuestion ( )
+    private void BarQuestion ( )
     {
-        //  TODO: Question On Averages
+        byte [ ] values = new byte [ 5 ];
+        values [ 0 ] = (byte) ( Random.Range ( 0.0f, 50.0f ) );
+
+        correct_answer = values [ 0 ];
+        for ( int i = 1; i < 5; ++i )
+        {
+            values [ i ] = (byte) ( values [ i - 1 ] + 1 );
+            correct_answer += values [ i ];
+        }
+
+        correct_answer /= 5;
+
+        string question = "Find the average of : ";
+
+        for ( int i = 0; i < 5; ++i )
+        {
+            question += System.Convert.ToString ( values [ i ] ) + ( ( i == 4 ) ? "" : ", " );
+        }
+
+        SetQuestion ( question );
+    }
+
+    private void BankQuestion ( )
+    {
+        //  TODO: Question On Currency
     }
 
     private int RoundTo10 ( float value )

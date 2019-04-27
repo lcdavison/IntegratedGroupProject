@@ -103,5 +103,6 @@ public class PlayerController : MonoBehaviour
     public void Reset ( )
     {
         button_mask = 0;
+        animator.SetAnimationState ( PlayerAnimator.AnimationState.IDLE );
     }
 }

@@ -34,6 +34,7 @@ public class Conversation : MonoBehaviour
             {
                 to_activate.SetActive ( true );
                 gameObject.SetActive ( false );
+                return;
             }
 
             segment_display.text = script.segments [ current_segment ];

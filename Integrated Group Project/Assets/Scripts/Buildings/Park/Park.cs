@@ -13,6 +13,9 @@ public class Park : MonoBehaviour
     private GameObject hud_canvas;
 
     [SerializeField]
+    private GameObject conversation_canvas;
+
+    [SerializeField]
     private GameObject park_canvas;
 
     private bool answered = true;
@@ -43,9 +46,9 @@ public class Park : MonoBehaviour
             zoom_to = zoom_min;
 
             hud_canvas.SetActive ( false );
-            park_canvas.SetActive ( true );
+            conversation_canvas.SetActive ( true );
 
-            GameManager.current_building = 2;
+            GameManager.current_building = 0;
 
             player_controller.movement_enabled = false;
             player_controller.Reset ( );
@@ -58,6 +61,7 @@ public class Park : MonoBehaviour
         zoom_to = zoom_max;
 
         hud_canvas.SetActive ( true );
+        conversation_canvas.SetActive ( false );
         park_canvas.SetActive ( false );
 
         player_controller.movement_enabled = true;

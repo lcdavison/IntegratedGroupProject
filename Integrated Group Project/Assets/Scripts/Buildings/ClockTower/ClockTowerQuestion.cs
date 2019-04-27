@@ -43,8 +43,8 @@ public class ClockTowerQuestion : MonoBehaviour
             total += Convert.ToByte ( entry.Value.time == answer );
         }
 
-        GameManager.LoadBuilding ( "lvlTutorial" );
+        GameManager.AddCoins ( total );
 
-        Debug.Log ( "Correct : " + total );
+        GameManager.LoadBuilding ( "lvlTutorial" );
     }
 }

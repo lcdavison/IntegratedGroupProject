@@ -13,13 +13,17 @@ MonoBehaviour:
   m_Name: Church
   m_EditorClassIdentifier: 
   segments:
-  - Welcome to the church of bidmas
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Welcome to the church of BIDMAS
+  - We would like to show you how to solve equations using, Addition, Subtraction,
+    Multiplication, and Division
+  - To add two numbers together you must start at the value to the left of the '+'
+    sign, the right side is the distance from the start to the answer
+  - For example, 1 + 3 = 4. Since 4 is 3 numbers after 1 on a number line
+  - Subtracting two numbers is similar, except you count backwards instead of forwards
+  - For example, 4 - 3 = 1
+  - To multiply two numbers together take the number to the left of the 'X' sign,
+    this is how many times to add the number on the right to itself
+  - For example, 2 x 4 = 8. Since 4 + 4 = 8
+  - Another example is 3 x 6 = 18. Since 6 + 6 + 6 = 18
+  - Division can be tricky, but I'm sure your're up to the challenge
   - 

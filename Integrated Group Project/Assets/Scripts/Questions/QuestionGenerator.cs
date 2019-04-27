@@ -111,7 +111,34 @@ public class QuestionGenerator : MonoBehaviour
 
     void MusicShopQuestion ( )
     {
-        //  TODO: Volume Of Cube and Area Of Rectangle
+        float rand = Random.Range ( 0.0f, 1.0f );
+
+        byte value = (byte) ( ( rand >= 0.5f ) ? 1.0f : 0.0f );
+
+        Diagram diagram = GameObject.Find ( "Diagram" ).GetComponent < Diagram > ( );
+
+        int width = (int) ( Random.Range ( 1.0f, 30.0f ) );
+        int height = (int) ( Random.Range ( 1.0f, 30.0f ) );
+        int length = 1;
+
+        switch ( value )
+        {
+            case 0:
+                SetQuestion ( "Find the Area of the Square" );
+
+                diagram.SetActiveDiagram ( 0 );
+                diagram.SetDimensions ( new Vector3 ( width, height, 0 ) );
+                break;
+            case 1:
+                length = (int) ( Random.Range ( 1.0f, 30.0f ) );
+
+                SetQuestion ( "Find the Volume of the Cube" );
+                diagram.SetActiveDiagram ( 1 );
+                diagram.SetDimensions ( new Vector3 ( width, height, length ) );
+                break;
+        }
+
+        correct_answer = width * height * length;
     }
 
     void BarQuestion ( )
@@ -131,6 +158,11 @@ public class QuestionGenerator : MonoBehaviour
                 rounded = ( ( int ) tens + 1 ) * 10;
 
             return rounded;
+    }
+
+    private void SetQuestion ( string question )
+    {
+        question_output.text = question;
     }
 
     public void OnClickSubmit()

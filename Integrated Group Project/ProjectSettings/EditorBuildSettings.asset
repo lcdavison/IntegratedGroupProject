@@ -12,12 +12,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial/lvlTutorial.unity
     guid: b2dc700b3b67f9e4cac0e2de84c5791c
   - enabled: 1
-    path: Assets/Scenes/LevelOne/lvlOne.unity
-    guid: 50c0c27d586d84149807d4a5f61bf0cb
-  - enabled: 1
     path: Assets/Scenes/Tutorial/intClocktower.unity
     guid: 288dc796dbbff4c4bb5b430f5fd9dd10
   - enabled: 1
+    path: Assets/Scenes/LevelOne/lvlOne.unity
+    guid: 50c0c27d586d84149807d4a5f61bf0cb
+  - enabled: 1
     path: Assets/Scenes/LevelOne/intChurch.unity
     guid: b7166d92fe2d73641a88e3bab846b4c9
+  - enabled: 1
+    path: Assets/Scenes/LevelTwo/lvlTwo.unity
+    guid: a6d0afdf489c289409eb158244a4be9a
+  - enabled: 1
+    path: Assets/Scenes/LevelTwo/intMusicShop.unity
+    guid: c79e0832bd9d86c45ad01763514fc414
+  - enabled: 1
+    path: Assets/Scenes/LevelTwo/intBar.unity
+    guid: fd258dfcd265c05498c28532d92c0cfb
+  - enabled: 1
+    path: Assets/Scenes/LevelThree/lvlThree.unity
+    guid: 1d8d169422786794d933b21c6607a889
+  - enabled: 1
+    path: Assets/Scenes/LevelThree/intBank.unity
+    guid: 90d0c58e0628ea14d925a347b0594446
   m_configObjects: {}

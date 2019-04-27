@@ -31,7 +31,6 @@ public class PlayerAnimator : MonoBehaviour
     private float last_time;
     private bool sprite_update = false;
 
-    // Start is called before the first frame update
     void Awake ( )
     {
         Sprite [ ] t_sprites = new Sprite [ sprite_atlas.spriteCount ];
@@ -79,7 +78,6 @@ public class PlayerAnimator : MonoBehaviour
             if ( current_time - last_time >= ( 1.0f / 4.0f ) )
             {
                 int anim_start = (int) current_state;   //  Animation starting frame
-                Debug.Log ( "Animation Start Frame : " + anim_start + " STATE : " + current_state );
 
                 frame = ( byte ) ( Convert.ToByte ( anim_start ) + ( animation_frame++ & 3 ) );
 

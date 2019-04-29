@@ -33,6 +33,9 @@ public class PlayerAnimator : MonoBehaviour
 
     void Awake ( )
     {
+        if ( GameManager.player_sprite != null )
+            sprite_atlas = GameManager.player_sprite;
+
         Sprite [ ] t_sprites = new Sprite [ sprite_atlas.spriteCount ];
         sprites = new Sprite [ sprite_atlas.spriteCount ];
 

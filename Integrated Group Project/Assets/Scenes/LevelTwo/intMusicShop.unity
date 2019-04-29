@@ -259,7 +259,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2509eb13b406b474d99c4faa64db7c58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -303,6 +303,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Quiz
+      objectReference: {fileID: 0}
+    - target: {fileID: 2408816391671343911, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5845168384834238149, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509,
         type: 3}
@@ -359,11 +364,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2408816391671343906, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1177526591}
     - target: {fileID: 2408816391586507475, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509,
         type: 3}
       propertyPath: exit_level
@@ -399,11 +399,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2408816391671343911, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509,
+    - target: {fileID: 2408816391671343906, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1177526591}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509, type: 3}
 --- !u!1 &1177526589
@@ -624,7 +624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: -225}
+  m_AnchoredPosition: {x: -247.3, y: -255}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1436486549
@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -662,13 +662,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Width : 40'
 --- !u!1 &1603097347
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,8 +703,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -373, y: -110}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -405, y: -110}
+  m_SizeDelta: {x: 84.37, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1603097349
 CanvasRenderer:
@@ -727,7 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -747,7 +747,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Height : 40'
 --- !u!1 &1887234402
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +838,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Conversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6857783581434877195, guid: 308b000dd9251144fbc1fdfb9c58834b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6857783581434877207, guid: 308b000dd9251144fbc1fdfb9c58834b,
         type: 3}
@@ -1003,7 +1008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1023,7 +1028,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Length : 40'
 --- !u!222 &2110630010
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1048,6 +1053,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: -24}
+  m_AnchoredPosition: {x: -56.3, y: -180.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}

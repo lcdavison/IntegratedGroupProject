@@ -6,15 +6,6 @@ using UnityEngine.SceneManagement;
 
 public static class GameManager
 {
-    /*
-          Have a reference to a class for the player, that contains all the player's data.
-          e.g.
-          Name
-          Coins
-          Score
-          etc.
-    */
-
     public enum Gender
     {
         MALE,
@@ -47,11 +38,16 @@ public static class GameManager
         switch ( gender )
         {
             case Gender.MALE:
-                player_sprite = Resources.Load ( "Boy" ) as SpriteAtlas;
+                player_sprite = Resources.Load ( "Spritesheets/Boy" ) as SpriteAtlas;
                 break;
             case Gender.FEMALE:
-                player_sprite = Resources.Load ( "Girl" ) as SpriteAtlas;
+                player_sprite = Resources.Load ( "Spritesheets/Girl" ) as SpriteAtlas;
                 break;
         }
+    }
+
+    public static ConversationScript LoadConversation ( string name )
+    {
+        return Resources.Load ( "Conversations/" + name ) as ConversationScript;
     }
 }

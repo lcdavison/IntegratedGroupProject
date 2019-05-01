@@ -518,6 +518,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Conversation
       objectReference: {fileID: 0}
+    - target: {fileID: 6857783581434877195, guid: 308b000dd9251144fbc1fdfb9c58834b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6857783581434877206, guid: 308b000dd9251144fbc1fdfb9c58834b,
+        type: 3}
+      propertyPath: to_activate
+      value: 
+      objectReference: {fileID: 2088829049}
+    - target: {fileID: 6857783581434877206, guid: 308b000dd9251144fbc1fdfb9c58834b,
+        type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 11400000, guid: 3dfee4cbf4237fa44877c96a18e43710,
+        type: 2}
     - target: {fileID: 6857783581434877207, guid: 308b000dd9251144fbc1fdfb9c58834b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -628,17 +644,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 226004521}
-    - target: {fileID: 6857783581434877206, guid: 308b000dd9251144fbc1fdfb9c58834b,
-        type: 3}
-      propertyPath: to_activate
-      value: 
-      objectReference: {fileID: 2088829049}
-    - target: {fileID: 6857783581434877206, guid: 308b000dd9251144fbc1fdfb9c58834b,
-        type: 3}
-      propertyPath: script
-      value: 
-      objectReference: {fileID: 11400000, guid: 3dfee4cbf4237fa44877c96a18e43710,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 308b000dd9251144fbc1fdfb9c58834b, type: 3}
 --- !u!1 &2088829049 stripped

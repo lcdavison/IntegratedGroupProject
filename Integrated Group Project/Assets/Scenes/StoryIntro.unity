@@ -596,12 +596,10 @@ MonoBehaviour:
   introduction:
   - "The Queen of Mathematical Valley has been kidnapped by the most clever mathematician
     in the land! \nDo you have what it takes to challenge his mathematical skills?"
-  - "The kidnapper has offered a ransom of 10 Great British Pounds for the release
-    of the Princess. The only way you can gain this money is by helping the local
-    people of Mathematical Valley with their maths problems. Follow the map and find
-    areas where you can answer questions in return for coins. Once you have enough
-    coins you will be able to exchange your money at the bank for Great British pounds
-    and be able to pay for the princess\u2019s freedom."
+  - The kidnapper has offered a ransom of 50 Coins for the release of the Queen. The
+    only way you can gain this money is by helping the local people of Mathematical
+    Valley with their maths problems. Once you have enough coins you will be able
+    to exchange your money at the bank, and pay for the Queens freedom.
   - Many people have entered mathematical valley and have been driven crazy by maths.
   - Eternal Glory Awaits.
 --- !u!114 &1697743545

@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e30abcc1264ab5041b9a32c784f11640, type: 3}
-  m_Name: Euro
+  m_Name: End
   m_EditorClassIdentifier: 
   segments:
-  - In Europe we use the Euro
+  - Congratulations!
+  - You can now pay the ransom and free the princess!
+  - The people of Mathematical Valley want to honour your heroic efforts by building
+    a statue of you in the middle of town
+  - They will be forever grateful for all your hard work

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfeaed0b3be57ef4e800c343c63cdb84, type: 3}
+  m_Name: Church
+  m_EditorClassIdentifier: 
+  help_information: "Addition\r\nYou can use a number line to add two numbers! For
+    example, 5 + 4 = 9, as 9 is 4 numbers away to the right from 5. \r\nIf you need
+    to add bigger numbers, you can use column addition. Start adding numbers from
+    the right. For example:\r\n    23\r\n + 32\r\n_____\r\n    55 \r\n\r\nSubtraction
+    \r\nYou can use a number line to subtract! Unlike with addition, you will have
+    to go to the left on the number line. For example, 10 - 5 = 5, as 5 is 5 numbers
+    away from 10 on the number line. \r\nAgain, if the numbers are too big, you can
+    use column subtraction! Make sure you always write WHAT you subtract below the
+    number you subtract FROM. For example, if you\x19re subtracting 15 from 41:\r\n
+    \  41\r\n- 15\r\n_____\r\n  26\r\n\r\n\r\nMultiplication\r\nIf you multiply a
+    number by 0, the answer will be 0.\r\n2 x 0 = 0\r\nIf you multiply a number by
+    1, the answer will be the same number.\r\n12 x 1 = 12\r\nIf you multiply a number
+    by 10, put 0 at the end.\r\n34 x 10 = 340 \r\nIf you multiply a number by 100,
+    put two 0 at the end.\r\n34 x 100 = 3400\r\nThe number on the left shows how many
+    times the number on the right was added to itself.\r\nFor example, 2 x 6 = 12,
+    as 6 + 6 = 12. \r\nSometimes, if you\x19re doing a harder problem, it is a good
+    idea to break it down. For example, 5 x 60 = 5 x 6 x 10. 5 x 6 = 30, and 30 x
+    10 = 300. \r\n\r\nDivision\r\nIf you divide a number by 1, the answer will be
+    the same number. \r\n51 / 1 = 51\r\nIf you divide a number by 10, move everything
+    one place to the right.\r\n650 / 10 = 65\r\nIf you divide a number by 100, move
+    everything two places to the right.\r\n6500 / 100 = 65\r\nUsing Number Line \r\nIn
+    some cases, you can use a number line to work out how to do division. For example,
+    what is 40 / 8? You can look at the number line to see how many intervals of 8
+    there are from 0 to 40. There are 8 intervals, therefore 40 / 8 = 5. \r\nShort
+    division:\r\nHow to divide 459 by 9?\r\nFirst, see if 4 can be divided by 9. 4
+    cannot be divided by 9, so see if 45 is divisible by 9. 45 / 9 = 5, so write down
+    5. Then, see if 9 can be divided by 9. 9 / 9 = 1, write down 1 after 5. The answer
+    is 51.\r\nSometimes, there will be a remainder. For example, let\x19s divide 469
+    by 9. We cannot divide 4 by 9, so let\x19s add 6. 46 / 9 = 5 (remainder 1), so
+    write down 5 and keep 1. Add 9, and see if 19 can be divided by 9. 19 / 9 = 2
+    (remainder 1). Therefore, the answer is 52 (1 remainder). \r\n"

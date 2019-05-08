@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d593fbf17f5ebd4293d5e2bd3bac8af, type: 3}
-  m_Name: Clocktower
+  m_Script: {fileID: 11500000, guid: cfeaed0b3be57ef4e800c343c63cdb84, type: 3}
+  m_Name: Park
   m_EditorClassIdentifier: 
-  id: 0
-  name: Clocktower
-  scene: intClocktower
-  marker: {x: 1.88, y: -0.97, z: 0}
+  help_information: "Rounding\r\n\nIf the last digit is less than 5, round down. If
+    it is 5 or more, round up.\r"

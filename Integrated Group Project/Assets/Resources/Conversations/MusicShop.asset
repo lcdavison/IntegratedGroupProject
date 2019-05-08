@@ -15,8 +15,8 @@ MonoBehaviour:
   segments:
   - Hello Traveler, welcome to my Music Shop
   - I can teach you about Area & Volume.
-  - To calculate the Area of a Square, you need to multiply the Width of the Square
-    by its Height.
-  - To calculate the Volume of a Cube, you need to multiply its Width by its Height
-    and Length.
+  - To calculate the Area of a Square, you need to multiply the Height of the Square
+    by its Width.
+  - To calculate the Volume of a Cube, you need to multiply its Height and Width by
+    its Length.
   - If you need any help to remember these formulae, press the Help button

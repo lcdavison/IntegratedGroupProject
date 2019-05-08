@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -269,7 +269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   segment_display: {fileID: 6857783582246980746}
   to_activate: {fileID: 0}
-  script: {fileID: 11400000, guid: 4105edcbf6faf684f9f0608627ef2f25, type: 2}
+  script: {fileID: 11400000, guid: 3dfee4cbf4237fa44877c96a18e43710, type: 2}
+  no_activation: 0
 --- !u!1 &6857783582246980747
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

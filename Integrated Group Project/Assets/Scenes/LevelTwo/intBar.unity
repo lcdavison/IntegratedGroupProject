@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quiz
       objectReference: {fileID: 0}
+    - target: {fileID: 2408816391671343911, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5845168384834238149, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -192,10 +197,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1557689708}
+    - target: {fileID: 1965860425970938071, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509,
+        type: 3}
+      propertyPath: help_text
+      value: 
+      objectReference: {fileID: 11400000, guid: 47e93d57806b296468f400bf5a97d0f5,
+        type: 2}
     - target: {fileID: 2408816391586507475, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509,
         type: 3}
       propertyPath: exit_level
       value: lvlTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2408816391827602891, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 59
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f8eba6ff8f83ef42a8cdd913c4cd509, type: 3}
@@ -211,6 +227,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Conversation
       objectReference: {fileID: 0}
+    - target: {fileID: 6857783581434877206, guid: 308b000dd9251144fbc1fdfb9c58834b,
+        type: 3}
+      propertyPath: to_activate
+      value: 
+      objectReference: {fileID: 574103225}
+    - target: {fileID: 6857783581434877206, guid: 308b000dd9251144fbc1fdfb9c58834b,
+        type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 11400000, guid: 4105edcbf6faf684f9f0608627ef2f25,
+        type: 2}
     - target: {fileID: 6857783581434877207, guid: 308b000dd9251144fbc1fdfb9c58834b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -321,11 +348,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1557689708}
-    - target: {fileID: 6857783581434877206, guid: 308b000dd9251144fbc1fdfb9c58834b,
-        type: 3}
-      propertyPath: to_activate
-      value: 
-      objectReference: {fileID: 574103225}
     - target: {fileID: 6857783580712641122, guid: 308b000dd9251144fbc1fdfb9c58834b,
         type: 3}
       propertyPath: m_AnchoredPosition.x

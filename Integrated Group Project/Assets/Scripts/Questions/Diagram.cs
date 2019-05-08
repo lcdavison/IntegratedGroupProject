@@ -26,22 +26,6 @@ public class Diagram : MonoBehaviour
         {
             sprite_renderer.sprite = diagrams [ index ];
             current_index = index;
-
-            Vector3 width_position = dimensions [ 0 ].gameObject.transform.localPosition;
-            Vector3 height_position = dimensions [ 1 ].gameObject.transform.localPosition;
-
-            width_position.y = -255.0f;
-            height_position.x = -405.0f;
-
-            if ( index == 1 )
-            {
-                //  Set Positions of Text
-                width_position.y = -210.0f;
-                height_position.x = -355.0f;
-            }
-
-            dimensions [ 0 ].gameObject.transform.localPosition = width_position;
-            dimensions [ 1 ].gameObject.transform.localPosition = height_position;
         }
     }
 

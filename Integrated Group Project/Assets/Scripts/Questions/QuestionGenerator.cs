@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//  TODO: Perhaps use some buttons for selecting answers
-//  TODO: Include some more drag and drop interactivity
-
 public class QuestionGenerator : MonoBehaviour
 {
-    private bool answered = true;
+    private bool answered = false;
+    private bool finished = true;
 
     [SerializeField]
     private InputField input_answer;
@@ -16,18 +14,48 @@ public class QuestionGenerator : MonoBehaviour
     [SerializeField]
     private Text question_output;
 
-    private int correct_answer;
+    [SerializeField]
+    private Text response_output;
+
+    [SerializeField]
+    private GameObject question_ui;
+
+    [SerializeField]
+    private GameObject coin;
+
+    [SerializeField]
+    private Text coin_output;
 
     [SerializeField]
     private string exit_level;  //  Level to exit to
 
+    private int correct_answer;
+
+    void Start ( )
+    {
+        //  Set Current Coins
+        coin_output.text = "Coins : " + GameManager.GetCoins ( );
+    }
+
     // Update is called once per frame
-    void Update()
+    void Update ( )
     {
         if ( answered )
         {
+            if ( Input.GetMouseButtonDown ( 0 ) )
+            {
+                response_output.transform.parent.gameObject.SetActive ( false );
+                question_ui.SetActive ( true );
+
+                answered = false;
+                finished = true;
+            }
+        }
+
+        if ( finished )
+        {
             GenerateQuestion ( );
-            answered = false;
+            finished = false;
         }
     }
 
@@ -37,9 +65,6 @@ public class QuestionGenerator : MonoBehaviour
 
         switch ( GameManager.current_building )
         {
-            case 0:
-                ParkQuestion ( );
-                break;
             case 1:
                 ChurchQuestion ( );
                 break;
@@ -48,9 +73,6 @@ public class QuestionGenerator : MonoBehaviour
                 break;
             case 3:
                 BarQuestion ( );
-                break;
-            case 4:
-                BankQuestion ( );
                 break;
         }
 
@@ -100,16 +122,6 @@ public class QuestionGenerator : MonoBehaviour
         }
 
         question_output.text = "Question : " + op_a + " " + symbol + " " + op_b;
-    }
-
-    private void ParkQuestion ( )
-    {
-        float value = Mathf.Floor ( Random.Range ( 11.0f, 99.0f ) );
-
-        correct_answer = RoundTo10 ( value );
-
-        Debug.Log ( "Value : " + value + " Rounded : " + correct_answer );
-        question_output.text = "Round " + value + " to the nearest 10";
     }
 
     private void MusicShopQuestion ( )
@@ -168,47 +180,35 @@ public class QuestionGenerator : MonoBehaviour
         SetQuestion ( question );
     }
 
-    private void BankQuestion ( )
-    {
-        //  TODO: Question On Currency
-    }
-
-    private int RoundTo10 ( float value )
-    {
-            float tens = value / 10.0f;
-
-            //  Round Down
-            int rounded = ( ( int ) tens ) * 10;
-
-            //  Round Up
-            if ( ( tens - ( int ) tens ) >= 0.5f )
-                rounded = ( ( int ) tens + 1 ) * 10;
-
-            return rounded;
-    }
-
     private void SetQuestion ( string question )
     {
         question_output.text = question;
     }
 
-    public void OnClickSubmit()
+    public void OnClickSubmit ( )
     {
         int answer = System.Convert.ToInt16 ( input_answer.text );
         int result = System.Convert.ToInt16 ( answer == correct_answer );
 
-        GameManager.AddCoins ( result );
-
         if ( result == 1 )
-            Debug.Log ( "Correct" );
+        {
+            response_output.text = "Correct";
+            GameObject.Instantiate ( coin, Vector3.zero, Quaternion.identity );
+        }
         else
-            Debug.Log ( "Incorrect" );
+        {
+            response_output.text = "Incorrect - The correct answer is " + correct_answer;
+        }
+
+        response_output.transform.parent.gameObject.SetActive ( true );
+        question_ui.SetActive ( false );
 
         answered = true;
+        input_answer.text = "";
     }
 
     public void OnClickExit ( )
     {
-        GameManager.LoadBuilding ( exit_level );
+        GameManager.LeaveArea ( exit_level );
     }
 }

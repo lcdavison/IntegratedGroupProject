@@ -45,6 +45,6 @@ public class ClockTowerQuestion : MonoBehaviour
 
         GameManager.AddCoins ( total );
 
-        GameManager.LoadBuilding ( "lvlTutorial" );
+        GameManager.LeaveArea ( "lvlTutorial" );
     }
 }

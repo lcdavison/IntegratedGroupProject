@@ -21,6 +21,12 @@ public class Park : MonoBehaviour
     [SerializeField]
     private Text question_output;
 
+    [SerializeField]
+    private Text coin_text;
+
+    [SerializeField]
+    private GameObject coin;
+
     private Vector3 swipe_start;
     private float start_value;
 
@@ -44,6 +50,7 @@ public class Park : MonoBehaviour
     {
         if ( answered )
         {
+            coin_text.text = "Coins : " + GameManager.GetCoins ( );
             GenerateQuestion ( );
         }
 
@@ -93,6 +100,12 @@ public class Park : MonoBehaviour
         answered = false;
         start_value = Mathf.Floor ( Random.Range ( 11.0f, 99.0f ) );
 
+        //  Check if number is already the nearest 10
+        if ( ( start_value / 10.0f - (int) ( start_value / 10.0f ) ) == 0.0f )
+        {
+            start_value++;
+        }
+
         correct_answer = RoundTo10 ( start_value );
 
         Debug.Log ( "Value : " + start_value + " Rounded : " + correct_answer );
@@ -129,7 +142,9 @@ public class Park : MonoBehaviour
 
         //  Check Answer
         if ( answer == correct_answer )
-            Debug.Log ( "Correct" );
+        {
+            GameObject.Instantiate ( coin, gameObject.transform.position, Quaternion.identity );
+        }
 
         answered = true;
     }

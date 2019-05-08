@@ -15,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Special
   - 
   - 
   - 
@@ -45,6 +45,9 @@ TagManager:
     locked: 0
   - name: Building
     uniqueID: 1865816457
+    locked: 0
+  - name: Special
+    uniqueID: 1376514017
     locked: 0
   - name: UserInterface
     uniqueID: 3231763233

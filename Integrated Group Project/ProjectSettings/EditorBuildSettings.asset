@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelThree/intBank.unity
     guid: 90d0c58e0628ea14d925a347b0594446
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: ca67b11830c636d46a5bb57d9aca692e
   m_configObjects: {}

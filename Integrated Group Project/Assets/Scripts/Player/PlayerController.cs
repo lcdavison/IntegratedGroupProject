@@ -24,6 +24,12 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if ( GameManager.spawn_positions.Count > 0 && GameManager.leaving )
+        {
+            transform.position = GameManager.spawn_positions.Pop ( );
+            GameManager.leaving = false;
+        }
+
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<PlayerAnimator>();
     }

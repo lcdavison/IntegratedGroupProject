@@ -13,6 +13,9 @@ public class TypeWriter : MonoBehaviour
     private GameObject continue_button;
 
     [SerializeField]
+    private string level;
+
+    [SerializeField]
     [Multiline]
     private string [ ] introduction = new string [ 4 ];
 
@@ -33,7 +36,7 @@ public class TypeWriter : MonoBehaviour
     {
         float current_time = Time.time;
 
-        if ( current_time - last_time > 0.1 && word_marker < words.Length )
+        if ( current_time - last_time > 0.1f && word_marker < words.Length )
         {
             //  Cache the word
             string word = words [ word_marker ];
@@ -61,9 +64,9 @@ public class TypeWriter : MonoBehaviour
 
     public void OnClickContinue ( )
     {
-        if ( text_marker == 3 )
+        if ( text_marker == introduction.Length )
         {
-            SceneManager.LoadScene ( "lvlTutorial" );
+            SceneManager.LoadScene ( level );
             return;
         }
 

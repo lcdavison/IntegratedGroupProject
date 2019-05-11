@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class QuestionGenerator : MonoBehaviour
 {
-    private bool answered = false;
-    private bool finished = true;
-
     [SerializeField]
     private InputField input_answer;
 
@@ -31,6 +28,10 @@ public class QuestionGenerator : MonoBehaviour
 
     private int correct_answer;
 
+    private bool answered = true;
+    private bool finished = true;
+
+    //  Start is called before the first frame update
     void Start ( )
     {
         //  Set Current Coins
@@ -40,10 +41,13 @@ public class QuestionGenerator : MonoBehaviour
     // Update is called once per frame
     void Update ( )
     {
+        //  Check if the question was answered
         if ( answered )
         {
+            //  Check if the screen was tapped
             if ( Input.GetMouseButtonDown ( 0 ) )
             {
+                //  Adjust UI
                 response_output.transform.parent.gameObject.SetActive ( false );
                 question_ui.SetActive ( true );
 
@@ -52,6 +56,7 @@ public class QuestionGenerator : MonoBehaviour
             }
         }
 
+        //  When the player is finished generate a new question
         if ( finished )
         {
             GenerateQuestion ( );
@@ -59,10 +64,10 @@ public class QuestionGenerator : MonoBehaviour
         }
     }
 
+    //  Generates a new question based on the current building
     private void GenerateQuestion ( )
     {
-        Debug.Log( "Generate Question" );
-
+        //  Determine question to generate
         switch ( GameManager.current_building )
         {
             case 1:
@@ -75,55 +80,51 @@ public class QuestionGenerator : MonoBehaviour
                 BarQuestion ( );
                 break;
         }
-
-        Debug.Log ( correct_answer );
     }
 
+    //  Generate a BIDMAS question
     private void ChurchQuestion ( )
     {
-        float rand = Random.Range ( 0.0f, 4.0f );
-        Debug.Log ( "Random Value : " + rand );
+        //  Generate a value for operation selection
+        int value = (int) ( Random.Range ( 0.0f, 4.0f ) );
 
-        int value = ( int ) Mathf.Floor ( rand );
-
+        //  Question operands
         int op_a = 0, op_b = 0;
 
         char symbol = '+';
 
+        //  Select operation and generate operands
         switch ( value )
         {
             case 0:
-                Debug.Log ( "QUOT" );
                 op_b = (int) Random.Range ( 1.0f, 12.0f );
                 op_a = ( (int) Random.Range ( 1.0f, 12.0f ) ) * op_b;
                 correct_answer = op_a / op_b;
-                symbol = '\u00f7';
+                symbol = '\u00f7';  //  Unicode for division symbol
                 break;
             case 1:
-                Debug.Log ( "PROD" );
                 op_a = (int) Random.Range ( 1.0f, 12.0f );
                 op_b = (int) Random.Range ( 1.0f, 12.0f );
                 correct_answer = op_a * op_b;
                 symbol = '*';
                 break;
             case 2:
-                Debug.Log ( "DIFF" );
                 op_a = (int) Random.Range ( 1.0f, 20.0f );
                 op_b = (int) Random.Range ( 1.0f, 20.0f );
                 correct_answer = op_a - op_b;
                 symbol = '-';
                 break;
             case 3:
-                Debug.Log ( "SUM" );
                 op_a = (int) Random.Range ( 1.0f, 20.0f );
                 op_b = (int) Random.Range ( 1.0f, 20.0f );
                 correct_answer = op_a + op_b;
                 break;
         }
 
-        question_output.text = "Question : " + op_a + " " + symbol + " " + op_b;
+        SetQuestion ( "Question : " + op_a + " " + symbol + " " + op_b );
     }
 
+    //  Generate an Area/Volume question
     private void MusicShopQuestion ( )
     {
         float rand = Random.Range ( 0.0f, 1.0f );
@@ -156,6 +157,7 @@ public class QuestionGenerator : MonoBehaviour
         correct_answer = width * height * length;
     }
 
+    //  Generate an average question
     private void BarQuestion ( )
     {
         byte [ ] values = new byte [ 5 ];
@@ -180,11 +182,13 @@ public class QuestionGenerator : MonoBehaviour
         SetQuestion ( question );
     }
 
+    //  Set the question output text
     private void SetQuestion ( string question )
     {
         question_output.text = question;
     }
 
+    //  Submits the players answer for checking
     public void OnClickSubmit ( )
     {
         int answer = System.Convert.ToInt16 ( input_answer.text );
@@ -193,11 +197,13 @@ public class QuestionGenerator : MonoBehaviour
         if ( result == 1 )
         {
             response_output.text = "Correct";
+            response_output.color = new Color ( 0.0f, 0.5f, 0.0f, 1.0f );
             GameObject.Instantiate ( coin, Vector3.zero, Quaternion.identity );
         }
         else
         {
             response_output.text = "Incorrect - The correct answer is " + correct_answer;
+            response_output.color = new Color ( 0.5f, 0.0f, 0.0f, 1.0f );
         }
 
         response_output.transform.parent.gameObject.SetActive ( true );
@@ -207,6 +213,7 @@ public class QuestionGenerator : MonoBehaviour
         input_answer.text = "";
     }
 
+    //  Exits the current building
     public void OnClickExit ( )
     {
         GameManager.LeaveArea ( exit_level );

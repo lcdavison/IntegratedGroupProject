@@ -12,7 +12,7 @@ public class Diagram : MonoBehaviour
     private Text [ ] dimensions = new Text [ 3 ];
 
     private SpriteRenderer sprite_renderer;
-    private byte current_index;
+    private byte current_index;     //  The current active diagram
 
     // Start is called before the first frame update
     void Start ( )
@@ -20,6 +20,7 @@ public class Diagram : MonoBehaviour
         sprite_renderer = gameObject.GetComponent < SpriteRenderer > (  );
     }
 
+    //  Changes the diagram that will be displayed
     public void SetActiveDiagram ( byte index )
     {
         if ( index < diagrams.Length )
@@ -29,10 +30,11 @@ public class Diagram : MonoBehaviour
         }
     }
 
+    //  Sets the text for the dimensions of the diagram
     public void SetDimensions ( Vector3 new_dimensions )
     {
-        dimensions [ 0 ].text = "Width : " + System.Convert.ToString ( new_dimensions.x );
-        dimensions [ 1 ].text = "Height : " + System.Convert.ToString ( new_dimensions.y );
-        dimensions [ 2 ].text = ( current_index == 0 ) ? " " : "Length : " + System.Convert.ToString ( new_dimensions.z );
+        dimensions [ 0 ].text = "Width : " + System.Convert.ToString ( new_dimensions.x );      //  Set width text
+        dimensions [ 1 ].text = "Height : " + System.Convert.ToString ( new_dimensions.y );     //  Set height text
+        dimensions [ 2 ].text = ( current_index == 0 ) ? " " : "Length : " + System.Convert.ToString ( new_dimensions.z );  //  Set length text, when cube diagram is active
     }
 }

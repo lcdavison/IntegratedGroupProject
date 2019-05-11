@@ -9,28 +9,32 @@ public class Clock : MonoBehaviour
 
     public Vector2 time;
 
+    //  Runs when the scene starts
     void Start ( )
     {
-        r_transform = gameObject.GetComponent <RectTransform> ( );
+        r_transform = gameObject.GetComponent < RectTransform > ( );
     }
 
+    //  Runs when the scene updates
     void Update ( )
     {
+        //  Check if clock is being dragged
         if ( dragging )
         {
+            //  Move the clock with the players finger
             r_transform.anchoredPosition = new Vector2 ( Input.mousePosition.x - Screen.width * 0.5f, Input.mousePosition.y - Screen.height * 0.5f );
         }
     }
 
+    //  Enable dragging state
     public void OnBeginDrag ( )
     {
-        Debug.Log ( "Start Clock Drag" );
         dragging = true;
     }
 
+    //  Disable dragging state
     public void OnEndDrag ( )
     {
-        Debug.Log ( "End Clock Drag" );
         dragging = false;
     }
 }

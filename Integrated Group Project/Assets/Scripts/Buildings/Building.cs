@@ -8,5 +8,5 @@ public class Building : ScriptableObject
     public int id = 0;
     public string name = "";
     public string scene = "";
-    public Vector3 marker = Vector3.zero;
+    public Vector3 marker = Vector3.zero;   //  Spawn position when player exits building
 }

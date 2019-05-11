@@ -7,7 +7,8 @@ public class BuildingHandler : MonoBehaviour
     [SerializeField]
     private Building building_data;
 
-    public Building GetData()
+    //  Returns the buildings data object
+    public Building GetData ( )
     {
         return building_data;
     }

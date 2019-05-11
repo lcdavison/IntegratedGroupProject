@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfeaed0b3be57ef4e800c343c63cdb84, type: 3}
+  m_Name: ClockTower
+  m_EditorClassIdentifier: 
+  help_information: "Time\r\n24 hours in a day\r\nStart counting from midnight \r\nFirst
+    12 hours of the day \u2013 AM\r\nLast 12 hours of the day \u2013 PM \r\n \r\nRoman
+    Numbers\r\nI = 1\r\nII = 2\r\nIII = 3\r\nIV = 4\r\nV = 5\r\nVI = 6\r\nVII = 7\r\nVIII
+    = 8\r\nIX = 9\r\nX = 10\r\nXI = 11\r\nXII = 12\r\n"

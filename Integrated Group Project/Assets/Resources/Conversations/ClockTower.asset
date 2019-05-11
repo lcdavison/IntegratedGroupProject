@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e30abcc1264ab5041b9a32c784f11640, type: 3}
+  m_Name: ClockTower
+  m_EditorClassIdentifier: 
+  segments:
+  - Welcome to the Big Ben Time!
+  - People use different clocks to tell the time, but I am sure you will not get confused!
+  - There are 24 hours in a day, starting from midnight. So if the time is 1 in the
+    afternoon, some clocks will be at 13 hours
+  - 'People can also use AM and PM to say what time it is. AM is the first 12 hours
+    of the day, PM is the last 12 hours of the day.
+
+    This means that 1 in the afternoon is 1 PM.'
+  - There are some clocks that use Roman Numbers, so it is important to understand
+    them.
+  - For example, I = 1, V = 5, X = 10
+  - If you want to know what are the other numbers, click on the help button

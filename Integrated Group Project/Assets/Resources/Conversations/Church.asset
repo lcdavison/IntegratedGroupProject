@@ -26,4 +26,10 @@ MonoBehaviour:
   - For example, 2 x 4 = 8. Since 4 + 4 = 8
   - Another example is 3 x 6 = 18. Since 6 + 6 + 6 = 18
   - Division can be tricky, but I'm sure your're up to the challenge
-  - 
+  - "The simplest way to divide a number is by working out how\r many times the smaller
+    number fits into the bigger number"
+  - For example, if you have the question 40 / 8. You need to work out how many times
+    8 goes into 40
+  - "You can do this by listing the multiples of 8 until you reach 40, which are 8,
+    16, 24, 32 and 40. As\r you can see fifth multiple of 8 is 40. \nTherefore 8 fits
+    into 40 five times."

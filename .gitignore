@@ -1,9 +1,14 @@
 #	Unity
+.vs/
+metadata/
+Library/
+ProjectSettings/
+Packages/
+obj/
+
 *.bin
 *.info
 *.log
 *.meta
 *.json
 *.dll
-metadata/
-Library/

@@ -154,7 +154,7 @@ public class Bank : MonoBehaviour
 
         //  Display question
         question_output.text = "Convert your " + dollars + " Dollars to Great British Pounds, the exchange rate is £0.77 to the Dollar";
-        correct_answer = yuan * 0.77f;
+        correct_answer = dollars * 0.77f;
 
         //  Adjust UI
         main_ui.SetActive ( false );

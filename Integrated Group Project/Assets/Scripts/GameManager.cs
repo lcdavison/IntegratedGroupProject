@@ -18,35 +18,35 @@ public static class GameManager
     public static int current_building = 0;     //  Current Building ID, used for question generation
     public static bool money_converted = false;
     public static bool leaving = false;
-    public static Stack < Vector3 > spawn_positions = new Stack < Vector3 > ( );
+    public static Stack < Vector3 > spawn_positions = new Stack < Vector3 > ( );    //  Positions for the player to spawn at
 
-    public static SpriteAtlas player_sprite;
+    public static SpriteAtlas player_sprite;    //  The players sprite
 
+    //  Add amount coins to collection
     public static void AddCoins ( int amount )
     {
         coins += amount;
     }
 
+    //  Get number of collected coins
     public static int GetCoins ( )
     {
         return coins;
     }
 
+    //  Add amount of GBP to collection
     public static void AddPounds ( float amount )
     {
         pounds += amount;
     }
 
+    //  Get number of collected GBP
     public static float GetPounds ( )
     {
         return pounds;
     }
 
-    public static void LoadBuilding ( string level_string )
-    {
-        SceneManager.LoadScene ( level_string );
-    }
-
+    //  Load a sprite atlas from disk
     public static void LoadSpriteAtlas ( Gender gender )
     {
         switch ( gender )
@@ -60,17 +60,21 @@ public static class GameManager
         }
     }
 
+    //  Load a conversation from disk
     public static ConversationScript LoadConversation ( string name )
     {
         return Resources.Load ( "Conversations/" + name ) as ConversationScript;
     }
 
+    //  Enter an area in the game
     public static void EnterArea ( string area, Vector3 position )
     {
+        //  Add respawn position to stack
         spawn_positions.Push ( position );
         SceneManager.LoadScene ( area );
     }
 
+    //  Leave an area in the game
     public static void LeaveArea ( string area )
     {
         SceneManager.LoadScene ( area );

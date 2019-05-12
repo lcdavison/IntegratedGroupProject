@@ -15,8 +15,9 @@ public class HelpScreen : MonoBehaviour
     private Text help_output;
 
     [SerializeField]
-    private HelpObject help_text;
+    private HelpObject help_text;   //  Help information to display
 
+    //  Show help screen when help button is clicked
     public void OnHelpClick ( )
     {
         to_hide.SetActive ( false );
@@ -25,6 +26,7 @@ public class HelpScreen : MonoBehaviour
         help_output.text = help_text.help_information;
     }
 
+    //  Close the help screen
     public void OnHelpExitClick ( )
     {
         to_hide.SetActive ( true );

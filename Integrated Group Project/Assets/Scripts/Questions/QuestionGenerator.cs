@@ -127,16 +127,21 @@ public class QuestionGenerator : MonoBehaviour
     //  Generate an Area/Volume question
     private void MusicShopQuestion ( )
     {
+        //  Generate a value between 0 and 1
         float rand = Random.Range ( 0.0f, 1.0f );
 
+        //  If greater than 0.5 set to 1, else set to 0
         byte value = (byte) ( ( rand >= 0.5f ) ? 1.0f : 0.0f );
 
+        //  Get diagram script from gameobject
         Diagram diagram = GameObject.Find ( "Diagram" ).GetComponent < Diagram > ( );
 
+        //  Generate dimension values
         int width = (int) ( Random.Range ( 1.0f, 30.0f ) );
         int height = (int) ( Random.Range ( 1.0f, 30.0f ) );
         int length = 1;
 
+        //  Set question and diagram based on value
         switch ( value )
         {
             case 0:
@@ -161,9 +166,13 @@ public class QuestionGenerator : MonoBehaviour
     private void BarQuestion ( )
     {
         byte [ ] values = new byte [ 5 ];
+
+        //  Generate first random value in series
         values [ 0 ] = (byte) ( Random.Range ( 0.0f, 50.0f ) );
 
         correct_answer = values [ 0 ];
+
+        //  Set next four numbers in series
         for ( int i = 1; i < 5; ++i )
         {
             values [ i ] = (byte) ( values [ i - 1 ] + 1 );
@@ -174,6 +183,7 @@ public class QuestionGenerator : MonoBehaviour
 
         string question = "Find the average of : ";
 
+        //  Append numbers in series
         for ( int i = 0; i < 5; ++i )
         {
             question += System.Convert.ToString ( values [ i ] ) + ( ( i == 4 ) ? "" : ", " );
@@ -191,26 +201,32 @@ public class QuestionGenerator : MonoBehaviour
     //  Submits the players answer for checking
     public void OnClickSubmit ( )
     {
+        //  Get player input
         int answer = System.Convert.ToInt16 ( input_answer.text );
+
+        //  Check answer is correct
         int result = System.Convert.ToInt16 ( answer == correct_answer );
 
         if ( result == 1 )
         {
+            //  Respond to correct answer
             response_output.text = "Correct";
             response_output.color = new Color ( 0.0f, 0.5f, 0.0f, 1.0f );
             GameObject.Instantiate ( coin, Vector3.zero, Quaternion.identity );
         }
         else
         {
+            //  Respond to incorrect answer
             response_output.text = "Incorrect - The correct answer is " + correct_answer;
             response_output.color = new Color ( 0.5f, 0.0f, 0.0f, 1.0f );
         }
 
+        //  Adjust UI
         response_output.transform.parent.gameObject.SetActive ( true );
         question_ui.SetActive ( false );
 
         answered = true;
-        input_answer.text = "";
+        input_answer.text = ""; //  Reset text in input box
     }
 
     //  Exits the current building

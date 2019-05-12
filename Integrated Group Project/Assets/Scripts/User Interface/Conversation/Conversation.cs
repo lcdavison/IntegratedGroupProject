@@ -14,11 +14,13 @@ public class Conversation : MonoBehaviour
     [SerializeField]
     private ConversationScript script;
 
-    private int current_segment;
-    public bool no_activation = false;
+    private int current_segment;    //  Current segment in conversation
+    public bool no_activation = false;  //  Does conversation activate any UI
 
+    //  Start is called before first frame update
     void Start ( )
     {
+        //  Display first segment
         current_segment = 0;
         segment_display.text = script.segments [ current_segment ];
     }
@@ -26,15 +28,19 @@ public class Conversation : MonoBehaviour
     // Update is called once per frame
     void Update ( )
     {
+        //  Print next conversation segment when the screen is tapped
         if ( Input.GetMouseButtonDown ( 0 ) )
         {
             ++current_segment;
 
+            //  End conversation after all segments have been displayed
             if ( current_segment >= script.segments.Length )
             {
+                //  Activate UI
                 if ( !no_activation )
                     to_activate.SetActive ( true );
 
+                //  Close conversation UI
                 current_segment = 0;
                 segment_display.text = script.segments [ current_segment ];
 
@@ -42,10 +48,12 @@ public class Conversation : MonoBehaviour
                 return;
             }
 
+            //  Display next conversation segment
             segment_display.text = script.segments [ current_segment ];
         }
     }
 
+    //  Change the script this conversation plays
     public void ChangeConversation ( ConversationScript new_script )
     {
         script = new_script;
@@ -53,6 +61,7 @@ public class Conversation : MonoBehaviour
         segment_display.text = script.segments [ current_segment ];
     }
 
+    //  Set UI the conversation activates
     public void SetActivationUI ( GameObject ui_object )
     {
         to_activate = ui_object;
